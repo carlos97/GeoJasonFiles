@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Corferias 3D</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../Build/Cesium/Cesium.js"></script>
+        <style>
+            @import "../../Build/Cesium/Widgets/widgets.css";
+        </style>
+    </head>
+    <body>
+        <div id="cesiumContainer"></div>
+        <div id="toolbar"></div>
+        <script>
+
+            var visor = new Cesium.Viewer('cesiumContainer');
+            var matrizColores = {};
+
+			
+			agregarGeojson('http://10.20.171.104:8085/cesium/apps/geojson/1.geojson', true);
+			agregarGeojson('http://10.20.171.67:8085/cesium/apps/geojson/2.geojson', true);
+			agregarGeojson('http://10.20.171.50:8085/cesium/apps/sig3d/3.geojson', true);
+			agregarGeojson('http://10.20.171.56:8085/cesium/apps/sig3d/4.geojson', true);
+			agregarGeojson('http://10.20.171.48:8085/cesium/apps/sig3d/5.geojson', true);
+			agregarGeojson('http://10.20.171.102:8085/cesium/apps/sig3d/6.geojson', true);			
+			agregarGeojson('http://10.20.171.52:8085/cesium/apps/geojson/7.geojson', true);
+			agregarGeojson('http://10.20.171.63:8085/cesium/apps/calera/8.geojson', true);
+			agregarGeojson('http://10.20.171.59:8085/cesium/apps/mibarrio/9.geojson', true);
+			agregarGeojson('http://10.20.171.36:8085/cesium/apps/sig3d/10.geojson', true);			
+			agregarGeojson('http://10.20.171.45:8085/cesium/apps/geojson/11.geojson', true);
+			agregarGeojson('12.geojson', true);
+			agregarGeojson('http://10.20.171.88:8085/cesium/apps/sig3d/13.geojson', true);
+           
+            function agregarGeojson(archivo,zoom) {
+
+                var miDataSource = new Cesium.GeoJsonDataSource();
+                var promesa = miDataSource.load(archivo);
+
+
+                promesa.then(function (miDataSource) {
+                    visor.dataSources.add(miDataSource);
+                    if(zoom==true){
+                    visor.zoomTo(miDataSource);
+                    }
+                    var entidades = miDataSource.entities.values;
+
+
+                    for (var i = 0; i < entidades.length; i++) {
+                        var miEntidad = entidades[i];
+                        var propietario = miEntidad.properties.propietario;
+                        var altura = miEntidad.properties.altura;
+                        var color = matrizColores[propietario];
+                        if (!color) {
+                            color = Cesium.Color.fromRandom({
+                                alpha: 1
+                            });
+
+                            matrizColores[propietario] = color;
+                        }
+
+                        miEntidad.polygon.material = color;
+                        miEntidad.polygon.outline = true;
+
+                        var posicion = miEntidad.polygon.hierarchy.getValue().positions[0];
+                        miEntidad.polygon.height = -0;
+                        miEntidad.polygon.extrudedHeight = miEntidad.properties.altura;
+                    }
+
+
+                }).otherwise(function (error) {
+                    console.error(error);
+                    console.error('No se cumplió la promesa!!');
+                });
+
+
+            }
+            
+           
+
+        </script>
+    </body>
+</html>
