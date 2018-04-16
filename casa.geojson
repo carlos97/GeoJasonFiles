@@ -4,11 +4,11 @@
     {
       "type": "Feature",
       "properties": {
-        "Altura": 20,
-        "Valor": 300000000,
-        "Cedula": 7864,
-        "Propietario": "carlos lopez",
-        "Mascotas": 40
+        "altura": 20,
+        "valor": 300000000,
+        "cedula": 7864,
+        "propietario": "carlos lopez",
+        "mascotas": 40
       },
       "geometry": {
         "type": "Polygon",
