@@ -1,0 +1,47 @@
+[{
+    "id" : "document",
+    "name" : "CZML Path",
+    "version" : "1.0",
+    "clock": {
+        "interval": "2018-01-01T00:00:00Z/2018-01-01T00:10:00Z",
+        "currentTime": "2018-01-01T00:00:00Z",
+        "multiplier": 1
+    }
+}, {
+    "id" : "path",
+    "name" : "Ruta animada en CESIUM!!!",
+    "description" : "Vuelo en parapente - SIG 3D",
+    "availability" : "2018-01-01T00:00:00Z/2018-01-01T00:50:00Z",
+    "path" : {
+        "material" : {
+            "polylineOutline" : {
+                "color" : {
+                    "rgba" : [255, 0, 255, 255]
+                },
+                "outlineColor" : {
+                    "rgba" : [0, 255, 255, 255]
+                },
+                "outlineWidth" : 5
+            }
+        },
+        "width" : 2,
+        "leadTime" : 0,
+        "trailTime" : 60,
+        "resolution" : 5
+    },
+    "billboard" : {
+        "image" : "parapente.gif",
+        "scale" : 1,
+        "eyeOffset": {
+            "cartesian": [ 0.0, 0.0, 0.0 ]
+        }
+    },
+    "position" : {
+        "epoch" : "2018-01-01T00:00:00Z",
+        "cartographicDegrees" : [
+            0,-74.08045649528503,4.7431078406043365,10,
+            60,-74.01007533073425,5.018693972415094,10
+        ]
+    }
+}
+]

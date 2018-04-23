@@ -1,0 +1,61 @@
+[
+{
+    "id" : "document",
+    "name" : "Marcadores a partir de un CZML",
+    "version" : "1.0"
+}, {
+    "id" : "point",
+    "position" : {
+       "epoch" : "2018-01-01T00:00:00Z",
+        "cartographicDegrees" : [
+            0,   -74.08045649528503,4.7431078406043365, 50,
+            60,  -74.08045649528503,4.7431078406043365, 50
+        ]
+    },
+    "point" : {
+        "color" : {
+            "rgba" : [255, 255, 255, 128]
+        },
+        "outlineColor" : {
+            "rgba" : [255, 0, 0, 128]
+        },
+        "outlineWidth" : 3,
+        "pixelSize" : 15
+    }
+},{
+    "id" : "point2",
+    "name" : "Centro Administrativo Distrital",
+    "description" : "CAD",
+    "label" : {
+        "font" : "12pt Lucida Console",
+        "horizontalOrigin" : "LEFT",
+        "pixelOffset" : {
+            "cartesian2" : [8, 0]
+        },
+        "style" : "FILL",
+        "text" : "CAD",
+        "showBackground" : true,
+        "backgroundColor" : {
+            "rgba" : [112, 89, 57, 200]
+        }
+    },
+    
+    "position" : {
+           "epoch" : "2018-01-01T00:00:00Z",
+        "cartographicDegrees" : [
+            8, -74.01007533073425,5.018693972415094, 50,
+            60,-74.01007533073425,5.018693972415094, 50
+        ]
+    },
+    "point" : {
+        "color" : {
+            "rgba" : [255, 255, 255, 128]
+        },
+        "outlineColor" : {
+            "rgba" : [255, 0, 0, 128]
+        },
+        "outlineWidth" : 3,
+        "pixelSize" : 15
+    }
+}
+]

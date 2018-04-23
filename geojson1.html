@@ -23,20 +23,21 @@ and open the template in the editor.
             var matrizColores = {};
 
 			
-			agregarGeojson('http://10.20.171.104:8085/cesium/apps/geojson/1.geojson', true);
-			agregarGeojson('http://10.20.171.67:8085/cesium/apps/geojson/2.geojson', true);
-			agregarGeojson('http://10.20.171.50:8085/cesium/apps/sig3d/3.geojson', true);
-			agregarGeojson('http://10.20.171.56:8085/cesium/apps/sig3d/4.geojson', true);
-			agregarGeojson('http://10.20.171.48:8085/cesium/apps/sig3d/5.geojson', true);
-			agregarGeojson('http://10.20.171.102:8085/cesium/apps/sig3d/6.geojson', true);			
-			agregarGeojson('http://10.20.171.52:8085/cesium/apps/geojson/7.geojson', true);
-			agregarGeojson('http://10.20.171.63:8085/cesium/apps/calera/8.geojson', true);
-			agregarGeojson('http://10.20.171.59:8085/cesium/apps/mibarrio/9.geojson', true);
-			agregarGeojson('http://10.20.171.36:8085/cesium/apps/sig3d/10.geojson', true);			
-			agregarGeojson('http://10.20.171.45:8085/cesium/apps/geojson/11.geojson', true);
-			agregarGeojson('12.geojson', true);
-			agregarGeojson('http://10.20.171.88:8085/cesium/apps/sig3d/13.geojson', true);
-           
+			//agregarGeojson('http://10.20.171.104:8085/cesium/apps/geojson/1.geojson', true);
+			//agregarGeojson('http://10.20.171.67:8085/cesium/apps/geojson/2.geojson', true);
+			//agregarGeojson('http://10.20.171.50:8085/cesium/apps/sig3d/3.geojson', true);
+			//agregarGeojson('http://10.20.171.56:8085/cesium/apps/sig3d/4.geojson', true);
+			//agregarGeojson('http://10.20.171.48:8085/cesium/apps/sig3d/5.geojson', true);
+			//agregarGeojson('http://10.20.171.102:8085/cesium/apps/sig3d/6.geojson', true);			
+			//agregarGeojson('http://10.20.171.52:8085/cesium/apps/geojson/7.geojson', true);
+			//agregarGeojson('http://10.20.171.63:8085/cesium/apps/calera/8.geojson', true);
+			//agregarGeojson('http://10.20.171.59:8085/cesium/apps/mibarrio/9.geojson', true);
+			//agregarGeojson('http://10.20.171.36:8085/cesium/apps/sig3d/10.geojson', true);			
+			//agregarGeojson('http://10.20.171.45:8085/cesium/apps/geojson/11.geojson', true);
+			//agregarGeojson('12.geojson', true);
+			//agregarGeojson('http://10.20.171.88:8085/cesium/apps/sig3d/13.geojson', true);
+            agregarGeojson('Nevados.geojson', true);
+			agregarGeojson('Catedral.geojson', true);
             function agregarGeojson(archivo,zoom) {
 
                 var miDataSource = new Cesium.GeoJsonDataSource();
@@ -58,7 +59,7 @@ and open the template in the editor.
                         var color = matrizColores[propietario];
                         if (!color) {
                             color = Cesium.Color.fromRandom({
-                                alpha: 1
+                                alpha: 0.5
                             });
 
                             matrizColores[propietario] = color;
@@ -68,8 +69,8 @@ and open the template in the editor.
                         miEntidad.polygon.outline = true;
 
                         var posicion = miEntidad.polygon.hierarchy.getValue().positions[0];
-                        miEntidad.polygon.height = -0;
-                        miEntidad.polygon.extrudedHeight = miEntidad.properties.altura;
+                        miEntidad.polygon.height = 0;
+                        miEntidad.polygon.extrudedHeight = miEntidad.properties.Altura;
                     }
 
 
